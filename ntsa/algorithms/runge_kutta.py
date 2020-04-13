@@ -1,11 +1,11 @@
-class RungeKutta:
+from ntsa.algorithms.solver import Solver
+
+
+class RungeKutta(Solver):
     """4th Order Classical Runge Kutta ODE Solver."""
 
     def __init__(self, t0, y0, h, dydt):
-        self.t0 = t0
-        self.y0 = y0
-        self.h = h
-        self.dydt = dydt
+        super().__init__(t0, y0, h, dydt)
 
     def _get_initial_params(self, target_t):
         h = self.h
