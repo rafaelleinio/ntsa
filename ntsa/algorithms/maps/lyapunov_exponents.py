@@ -7,7 +7,9 @@ from ntsa.algorithms.maps.map import Map
 
 
 class LyapunovExponents:
-    def __init__(self, map: Map, tolerance: float = 0.00001, max_iterations: int = 1000):
+    def __init__(
+        self, map: Map, tolerance: float = 0.00001, max_iterations: int = 1000
+    ):
         self.map = map
         self.tolerance = tolerance
         self.max_iterations = max_iterations

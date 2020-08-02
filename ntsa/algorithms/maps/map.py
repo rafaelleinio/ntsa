@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Map:
+class Map(ABC):
     """Abstract class for implementation the of Maps."""
 
     @abstractmethod

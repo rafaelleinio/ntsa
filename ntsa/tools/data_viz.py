@@ -6,21 +6,25 @@ import pandas as pd
 
 
 class DataViz:
-    def __init__(self):
+    def __init__():
         plt.figure(figsize=(20, 20))
 
-    def plot_data(self, data, x="t", y="y", label=None):
+    @staticmethod
+    def plot_data(data, x="t", y="y", label=None):
         ax = plt.gca()
         df = pd.DataFrame(data).astype(float)
         df.plot(kind="line", x=x, y=y, ax=ax, label=label)
 
-    def show(self):
+    @staticmethod
+    def show():
         plt.show()
 
-    def display_image(self, image):
+    @staticmethod
+    def display_image(image):
         display(image)
 
-    def create_animation(self, images, cmap="gray", figsize=(20, 20)):
+    @staticmethod
+    def create_animation(images, cmap="gray", figsize=(20, 20)):
         frames = len(images)
         fig = plt.figure(figsize=figsize)
         im = plt.imshow(images[0], cmap=cmap)
@@ -35,5 +39,13 @@ class DataViz:
 
         return animation.FuncAnimation(fig, update, frames=frames, repeat=True)
 
-    def display_animation(self, animation):
+    @staticmethod
+    def display_animation(animation):
         display(HTML(animation.to_html5_video()))
+
+    @staticmethod
+    def display_recurrence_plot(xs, threshold):
+        threshold_map = lambda x, y: 1 if abs(x - y) >= threshold else 0
+        matrix = [[threshold_map(x, y) for y in reversed(xs)] for x in xs]
+        plt.imshow(matrix, cmap="gray")
+        plt.show()

@@ -8,7 +8,7 @@ class Tent(Map):
         self.u = u
 
     def f(self, x):
-        x, = x
+        (x,) = x
         if 0 <= x <= 1 / 2:
             return array([self.u * x])
         elif 1 / 2 < x <= 1:
@@ -17,7 +17,7 @@ class Tent(Map):
             raise ValueError("x not between 0 and 1")
 
     def df(self, x, w):
-        x, = x
+        (x,) = x
         if 0 <= x <= 1 / 2:
             jacobian_matrix = array([[self.u]])
             return jacobian_matrix @ w
