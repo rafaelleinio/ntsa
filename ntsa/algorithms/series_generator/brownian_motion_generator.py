@@ -1,3 +1,5 @@
+"based on: https://scipy-cookbook.readthedocs.io/items/BrownianMotion.html"
+
 from ntsa.algorithms.series_generator.series_generator import SeriesGenerator
 
 from math import sqrt
