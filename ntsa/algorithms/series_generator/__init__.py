@@ -4,3 +4,4 @@ from ntsa.algorithms.series_generator.periodic_oscilator_generator import (
 )
 from ntsa.algorithms.series_generator.drift_logistic_map_generator import DriftLogisticMapGenerator
 from ntsa.algorithms.series_generator.brownian_motion_generator import BrownianMotionGenerator
+from ntsa.algorithms.series_generator.lorenz_map_generator import LorenzMapMapGenerator
